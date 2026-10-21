@@ -1,0 +1,29 @@
+# ===== PolyGuardChat =====
+api:
+  # links.json that contains the live "base_url" (tunnel link). Re-fetched automatically when the tunnel changes.
+  links-url: "https://bbblofficial.github.io/PolyGuard/api/links.json"
+  # Leave empty if the server does not need a key
+  api-key: ""
+  # HTTP timeout in milliseconds (chat waits at most this long)
+  timeout-ms: 4000
+  # Re-fetch base_url every X minutes (0 = only on failure)
+  refresh-minutes: 10
+
+filter:
+  # BLOCK  = toxic message is deleted from chat (uses /check)
+  # CENSOR = bad words are replaced with *** and the message is still sent (uses /censor)
+  mode: BLOCK
+  # If the API is down / rate limited: true = let the message through, false = delete it
+  fail-open: true
+  # Messages shorter than this are not checked
+  min-length: 2
+
+messages:
+  prefix: "&8[&cPolyGuard&8] "
+  blocked: "&cPayamet be khatere fohsh/towhin pak shod."
+  censored: "&ePayamet sansor shod."
+  notify: "&7{player} &cblocked: &f{message}"
+  reloaded: "&aConfig reload shod."
+  no-permission: "&cDastresi nadari."
+
+debug: false

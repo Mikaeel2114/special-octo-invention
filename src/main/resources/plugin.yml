@@ -1,0 +1,21 @@
+name: PolyGuardChat
+version: ${project.version}
+main: com.polyguard.mc.PolyGuardPlugin
+author: mikaeel12
+description: AI anti-swear chat filter powered by PolyGuard
+commands:
+  polyguard:
+    description: PolyGuard admin command
+    usage: /polyguard <reload|status|test <text>>
+    aliases: [pg]
+    permission: polyguard.admin
+permissions:
+  polyguard.admin:
+    description: Use /polyguard
+    default: op
+  polyguard.bypass:
+    description: Chat is not filtered
+    default: false
+  polyguard.notify:
+    description: See blocked messages from other players
+    default: op
